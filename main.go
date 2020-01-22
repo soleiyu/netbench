@@ -6,15 +6,32 @@ import (
 	"bufio"
 	"strconv"
 	"strings"
-	"./blib"
+//	"./blib"
 )
 
 func main() {
 
-	rdRes(22)
-
+	d21 := rdRes(21)
+	
+	parser(d21[0], d21[1])
 }
 
+func parser(l1, l2 string) (int, int, int, int, int, float64) {
+
+	l1s := strings.Split(l1, " ")
+	l2s := strings.Split(l2, " ")
+
+	d, _ := strconv.Atoi(l1s[0])
+	h, _ := strconv.Atoi(l1s[1])
+	m, _ := strconv.Atoi(l1s[2])
+	s, _ := strconv.Atoi(l1s[3])
+
+	for i := 0; i < len(l2s); i++ {
+		fmt.Println(l2s[i])
+	}
+
+	return d, h, m, s, 0, 0.0
+}
 
 
 
@@ -48,10 +65,6 @@ func rdRes(day int) []string {
 			continue
 		}
 		dtxs = append(dtxs, rtxs[i], rtxs[i + 1])
-	}
-
-	for i := 0; i < len(dtxs); i ++ {
-		fmt.Println(dtxs[i])
 	}
 
 	return dtxs
