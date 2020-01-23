@@ -1,4 +1,4 @@
-DAY = 21
+DAY = 23
 
 default:
 	rm res.plt
